@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head :: baseHead(~{::title})">
+
+        <title>Autor - dodaj | Collection Library</title>
+
+    </head>
+    <body>
+        <nav th:replace="fragments/menu :: menu"></nav>
+
+        <div class="container top-margin">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Dodaj Aktora</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" th:action="@{/author/save}" th:object="${author}" method="post">
+                        <div class="form-group">
+                            <label for="authorFirstName">Imię:</label>
+                            <input type="text" class="form-control" id="authorFirstName" th:field="*{firstName}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="authorSecondName">Nazwisko:</label>
+                            <input type="text" class="form-control" id="authorSecondName" th:field="*{lastName}" />
+                        </div>
+                        <td colspan="2"><button type="submit" class="btn btn-primary">Zapisz</button> </td>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>

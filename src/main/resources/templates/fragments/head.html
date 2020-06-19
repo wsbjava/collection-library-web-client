@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:fragment="baseHead(title)">
+
+    <title th:replace="${title}">Atta | Founder. Developer. Blogger.</title>
+
+    <!-- default styles and scripts -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta content="ie=edge" http-equiv="x-ua-compatible" />
+    <title th:text="${metaTitle} ? ${metaTitle} : 'Collection Library'"></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        html, body {
+            background:#eee;
+        }
+        .top-margin {
+            margin-top: 80px;
+            background: #fff;
+        }
+    </style>
+
+</head>
+<body>
+
+</body>
+</html>

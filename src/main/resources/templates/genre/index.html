@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head :: baseHead(~{::title})">
+
+    <title>Gatunki - lista | Collection Library</title>
+
+</head>
+<body>
+<nav th:replace="fragments/menu :: menu"></nav>
+
+<div class="container top-margin">
+    <div class="row">
+        <div class="col-12">
+            <h1>Lista gatunków</h1>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nazwa</th>
+                <th scope="col">abbr</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="genre : ${listGenries}">
+                <th scope="row" th:text="${genre.id}">Id</th>
+                <td th:text="${genre.name}">Imię</td>
+                <td th:text="${genre.abbr}">Nazwisko</td>
+                <td>
+                    <a th:href="@{'/author/edit/' + ${author.id}}">Edytuj</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/author/delete/' + ${author.id}}">Usuń</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
