@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="fragments/head :: baseHead(~{::title})">
+        <title>Autor - dodaj | Collection Library</title>
+    </head>
+    <body>
+        <nav th:replace="fragments/menu :: menu"></nav>
+
+        <div class="container top-margin">
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <h1>Logowanie</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <form action="#" th:action="@{/user/authenticate}" th:object="${user}" method="post">
+                        <div class="form-group">
+                            <label for="authorFirstName">E-Mail:</label>
+                            <input type="text" class="form-control" id="authorFirstName" />
+                        </div>
+                        <div class="form-group">
+                            <label for="authorSecondName">Hasło:</label>
+                            <input type="password" class="form-control" id="authorSecondName"  />
+                        </div>
+                        <td colspan="2"><button type="submit" class="btn btn-primary">Zaloguj</button> </td>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div th:replace="fragments/footer :: footer"></div>
+    </body>
+</html>

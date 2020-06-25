@@ -4,23 +4,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import pl.wsb.collection.libraryclientweb.model.Author;
 import pl.wsb.collection.libraryclientweb.model.Genre;
-import pl.wsb.collection.libraryclientweb.repository.GenreRepository;
-import pl.wsb.collection.libraryclientweb.service.AuthorService;
 import pl.wsb.collection.libraryclientweb.service.GenreService;
 
 import java.util.Date;
 
 
 @Controller
-@RequestMapping("/genre")
-public class GenreController {
+@RequestMapping("/user")
+public class UserController {
 
     private final GenreService genreService;
 
-    public GenreController(GenreService genreService){
+    public UserController(GenreService genreService){
         this.genreService = genreService;
+    }
+
+    @GetMapping("/login")
+    public String userLogin(Model model){
+        model.addAttribute("user", null);
+        return "user/authenticate/login";
     }
     @GetMapping("/")
     public String index(Model model){

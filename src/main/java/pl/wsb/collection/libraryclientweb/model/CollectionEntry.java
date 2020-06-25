@@ -49,23 +49,23 @@ public class CollectionEntry implements Serializable {
 	private CollectionType collectionType;
 
 	//bi-directional many-to-one association to CollectionEntryAuthor
-	@OneToMany(fetch= FetchType.LAZY, mappedBy="collectionEntry")
+	@OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="collectionEntry")
 	private Set<CollectionEntryAuthor> collectionEntryAuthors = new HashSet<>(0);
 
 	//bi-directional many-to-one association to CollectionEntryGenre
-	@OneToMany(fetch= FetchType.LAZY, mappedBy="collectionEntry")
+	@OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="collectionEntry")
 	private Set<CollectionEntryGenre> collectionEntryGenres = new HashSet<>(0);
 
 	//bi-directional many-to-one association to CollectionEntryPublisher
-	@OneToMany(fetch= FetchType.LAZY, mappedBy="collectionEntry")
+	@OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL, mappedBy="collectionEntry")
 	private Set<CollectionEntryPublisher> collectionEntryPublishers = new HashSet<>(0);
 
 	//bi-directional many-to-one association to CollectionLibrary
-	@OneToMany(fetch= FetchType.LAZY, mappedBy="collectionEntry")
+	@OneToMany(fetch= FetchType.LAZY, cascade = CascadeType.ALL,  mappedBy="collectionEntry")
 	private Set<CollectionLibrary> collectionLibraries = new HashSet<>(0);
 
 	//bi-directional many-to-one association to Suggestion
-	@OneToMany(fetch= FetchType.LAZY, mappedBy="collectionEntry")
+	@OneToMany(fetch= FetchType.LAZY,cascade = CascadeType.ALL,  mappedBy="collectionEntry")
 	private Set<Suggestion> suggestions;
 
 	public CollectionEntry() {

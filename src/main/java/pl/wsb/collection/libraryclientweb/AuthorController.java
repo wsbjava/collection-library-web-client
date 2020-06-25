@@ -37,7 +37,6 @@ public class AuthorController {
     @PostMapping("/save")
     public String saveActor(@ModelAttribute("author") Author author) {
         author.setModified(new Date());
-        System.out.println(author.getFirstName());
         this.authorService.save(author);
         return "redirect:/author/";
     }

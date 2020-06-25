@@ -20,19 +20,17 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nazwa</th>
-                <th scope="col">abbr</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="genre : ${listGenries}">
-                <th scope="row" th:text="${genre.id}">Id</th>
-                <td th:text="${genre.name}">Nazwa</td>
-                <td th:text="${genre.abbr}">Abbr</td>
+            <tr th:each="item : ${listEntries}">
+                <th scope="row" th:text="${item.id}">Id</th>
+                <td th:text="${item.title}">Nazwa</td>
                 <td>
-                    <a th:href="@{'/genre/edit/' + ${genre.id}}">Edytuj</a>
+                    <a th:href="@{'/collection-entry/edit/' + ${item.id}}">Edytuj</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/genre/delete/' + ${genre.id}}">Usuń</a>
+                    <a th:href="@{'/collection-entry/delete/' + ${item.id}}">Usuń</a>
                 </td>
             </tr>
             </tbody>
