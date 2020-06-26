@@ -7,7 +7,22 @@
 </head>
 <body>
 <nav th:replace="fragments/menu :: menu"></nav>
-<h1>Strona domowa</h1>
+<div class="container top-margin">
+    <div class="row">
+        <div class="col-12">
+            <span class="text-center">
+                <h1>Strona domowa</h1>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <p>
+                Witaj na stronie projektu realizowanego w ramach zajęć na Wyższej Szkole Bankowej. Strona ta powstała w ramach tworzenia klienta Web do serwera
+            </p>
+        </div>
+    </div>
+</div>
 <div th:replace="fragments/footer :: footer"></div>
 </body>
 </html>
